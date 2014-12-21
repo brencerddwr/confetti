@@ -7,7 +7,7 @@
 //
 //////////////////////////////////////////////////
 
-#define NUM_LEDS 4
+#define NUM_LEDS 12
 
 // Data pin that led data will be written out over
 #define DATA_PIN 6
@@ -17,7 +17,7 @@
 CRGB leds[NUM_LEDS];
 
 void setup() {
-	// sanity check delay - allows reprogramming if accidently blowing power w/leds
+	// sanity check delay - allows reprogramming if accidentally blowing power w/leds
 	delay(2000);
 
 
@@ -29,14 +29,15 @@ void setup() {
 }
 
 void loop() {
-	fadeToBlackBy( leds, NUM_LEDS, 20);
+	fadeToBlackBy( leds, NUM_LEDS, 10);
 	int x = random16(NUM_LEDS);
 	if (!leds[x])
 	{
 		leds[ x ] += CHSV( random8(), 255, 255);
 	}
 	FastLED.show();
-	FastLED.delay(20);
+	FastLED.delay(60);
+	
 
 }
 
