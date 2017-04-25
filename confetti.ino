@@ -7,7 +7,7 @@
 //
 //////////////////////////////////////////////////
 
-#define NUM_LEDS 12
+#define NUM_LEDS 24
 
 // Data pin that led data will be written out over
 #define DATA_PIN 6
@@ -29,7 +29,7 @@ void setup() {
 }
 
 void loop() {
-	fadeToBlackBy( leds, NUM_LEDS, 10);
+	fadeToBlackBy( leds, NUM_LEDS, 33);
 	int x = random16(NUM_LEDS);
 	if (!leds[x])
 	{
